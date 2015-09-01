@@ -24,28 +24,10 @@ namespace Jarvis.Code
     {
         // Make it Async
 
-        public void interact()
-        {
-            SyS_Counter Info = new SyS_Counter();
-            int CurrentCPU = CPU_Count();
-            int CurrentRAM = RAM_Count();
-
-            MessageBox.Show(Convert.ToString(CurrentCPU + CurrentRAM));
-
-
-        }
-
-
-
-
-
-
-
-
 
         #region Count
 
-        private int CPU_Count()
+        public int CPU_Count()
         {
             PerformanceCounter perfCpuCount = new PerformanceCounter("Processor Information", "% Processor Time", "_Total");
            perfCpuCount.NextValue();
@@ -53,7 +35,7 @@ namespace Jarvis.Code
             return currentCpuPercentage;
         }
 
-        private int RAM_Count()
+        public int RAM_Count()
         {
             PerformanceCounter perfMemCount = new PerformanceCounter("Memory", "Available MBytes");
             perfMemCount.NextValue();

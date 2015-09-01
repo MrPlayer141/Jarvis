@@ -62,9 +62,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BasicModule\CPU_RAM_HDD_Info.cs" />
     <Compile Include="Code\SyS_Counter.cs" />
     <Compile Include="Code\Drunk_Mode.cs" />
-    <Compile Include="Code\KeyLoger.cs" />
     <Compile Include="Code\Speech.cs" />
     <Compile Include="Code\Startup.cs" />
     <Compile Include="MainWindow.xaml.cs">

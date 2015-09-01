@@ -1,12 +1,12 @@
 ﻿<Window x:Class="JarvisWPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Jarvis" Height="350" Width="525">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="350" Width="560" ResizeMode="CanMinimize" WindowStartupLocation="Manual">
     <Grid>
-        <Label x:Name="lbl_CPU" Content="0%" HorizontalAlignment="Left" Margin="27,89,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_Ram" Content="0 MB" HorizontalAlignment="Left" Margin="27,120,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_Uptime" Content="Label" HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top"/>
-        <Button Content="Start Jarvis CPU Mem Count" HorizontalAlignment="Left" Margin="178,266,0,0" VerticalAlignment="Top" Width="176" Click="Button_Click"/>
+        <Label x:Name="lbl_CPU" Content="0%" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_Ram" Content="0 MB" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_Uptime" Content="Uptime" HorizontalAlignment="Left" Margin="142,17,0,0" VerticalAlignment="Top" FontSize="14.667"/>
+        <Button Content="Start Jarvis CPU Mem Count" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="176" Click="Button_Click"/>
+        <Label x:Name="label" Content="Jarvis" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Terminator Two" FontSize="26.667"/>
 
     </Grid>
 </Window>
