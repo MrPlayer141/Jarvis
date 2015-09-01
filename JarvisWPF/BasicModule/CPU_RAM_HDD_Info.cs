@@ -27,7 +27,7 @@ namespace Jarvis.BasicModule
             cpuMaxedOutMessages.Add("ALARM! ALARM! ALARM! ALARM! Ich bin überlastet!");
             cpuMaxedOutMessages.Add("ACHTUNG: Ich gehe gleich in Flammen auf!");
             cpuMaxedOutMessages.Add("Scheinbar wilst du ein Lagerfeuer in deinen Zimmer machen so wie du mich überlastest");
-            cpuMaxedOutMessages.Add("Achtung ich bin überlastet stoppe den download deiner Pornos");
+            //cpuMaxedOutMessages.Add("Achtung ich bin überlastet stoppe den download deiner Pornos");
             Random rand = new Random();
 
 
@@ -35,7 +35,7 @@ namespace Jarvis.BasicModule
             {
                 if (currentCpuPercentage == 100)
                 {
-                    string cpuLoadVocalMessage = cpuMaxedOutMessages[rand.Next(5)];
+                    string cpuLoadVocalMessage = cpuMaxedOutMessages[rand.Next(4)];
                     JarvisSpeak(cpuLoadVocalMessage, VoiceGender.Male, speechSpeed);
                 }
             }
