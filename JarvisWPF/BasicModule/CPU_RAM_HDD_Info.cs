@@ -17,13 +17,14 @@ namespace Jarvis.BasicModule
         public void CPUandRam()
             {
             int speechSpeed = 1;
-            JarvisSpeak("CPU Belastungs info gestartet.", VoiceGender.Male, speechSpeed);
+            JarvisSpeak("Starte Jarvis CPU und Arbeitspeicher Counter.", VoiceGender.Male, speechSpeed);
 
             Jarvis.Code.SyS_Counter info = new Code.SyS_Counter();
             int currentCpuPercentage = info.CPU_Count();
             int currentAvailableMemory = info.RAM_Count();
-            
 
+            Process currentProc = Process.GetCurrentProcess();
+            long memoryUsed = currentProc.PrivateMemorySize64 / 1024 / 1024;
 
             List<string> cpuMaxedOutMessages = new List<string>();
             cpuMaxedOutMessages.Add("ACHTUNG: Die CPU jagt official Eichhörnchen!");
@@ -52,8 +53,11 @@ namespace Jarvis.BasicModule
 
             if (currentAvailableMemory > 1024)
         {
-            string memAvailableVocalMessage = String.Format("Du hast {0} Megabite vom Arbeitsspeicher verfügbar",
-                currentAvailableMemory);
+                
+            string memAvailableVocalMessage = String.Format("Du hast {0} Megabeit vom Arbeitsspeicher verfügbar. Von deinen Verbrauchten Arbeitsspeicher nutzt Jarvis {1} Megabeit",
+                currentAvailableMemory,
+                memoryUsed
+                );
             JarvisSpeak(memAvailableVocalMessage, VoiceGender.Male, 1);
         }
         else

@@ -26,33 +26,41 @@ namespace JarvisWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        bool IDE = false;
         public MainWindow()
         {
             InitializeComponent();
+            Update_Info();
             startup();
 
         }
 
         public void startup()
         {
-            
-            Version();
-            Uptime();
+            if (IDE == true)
+            {}
+            else
+            {
+                Version();
+                Uptime();
+                Hello();
+                bugDisclamer();
+                roadmap();
+            }
         }
 
+        #region Startup
         public void Version()
         {
-            string sysVersion = string.Format("Willkommen . Ich lade Jarvis Version {0} Punkt {1} Punkt {2} Punkt {3} Build {4}!",
+            string sysVersion = string.Format("Willkommen . Ich lade Jarvis {0} Version {1} Punkt {2} Punkt {3} Punkt {4} Build {5}!",
+                (string)"Alpha",
                 (int) 1,
                 (int) 0,
                 (int) 0,
-                (int) 1,
-                (int) 1037
+                (int) 2,
+                (int) 1100
                 );
-
             JarvisSpeak(sysVersion, VoiceGender.Male, 1);
-
         }
         
         public void Uptime()
@@ -68,26 +76,53 @@ namespace JarvisWPF
 
             JarvisSpeak(systemUptimeMessage, VoiceGender.Male, 1);
             lbl_Uptime.Content = systemUptimeMessage;
+        }
 
+        public void Hello()
+        {
             JarvisSpeak("Wilkommen ich bin Jarvis. Das Laden weitere Informationen ist bald verfügbar, sowie das selbst Aktualisieren und die Unterstützung mehere Sprachen.", VoiceGender.Male, 2);
         }
 
-        public static void DefaultList(string URLList)
+        public void bugDisclamer()
         {
-            Process p1 = new Process();
-            p1.StartInfo.FileName = "chrome.exe";
-            p1.StartInfo.Arguments = URLList;
-            p1.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
-            p1.Start();
+            JarvisSpeak("Die Entwicklung von Jarvis hat noch keinen stabielen zustand erreicht. Deshalb können noch fehler auftreten. Fehler können auf Git Hab gemeldet werden.", VoiceGender.Female, 1);
+        }
+
+        public void roadmap()
+        {
+            JarvisSpeak("Die geplante Weiterentwicklung von Jarvis kann auf Trello punkt Kom angeschaut werden.", VoiceGender.Male, 1);
 
         }
 
+        #endregion
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            JarvisSpeak("Fehler sind noch da. Ich bitte um nachsicht.", VoiceGender.Female, 1);
-
             Jarvis.BasicModule.CPU_RAM_HDD_Info Check = new Jarvis.BasicModule.CPU_RAM_HDD_Info();
+            Update_Info();
+            Check.CPUandRam();
+            
+            //JarvisSpeak("Diese Funktion wurde Temporär entfernt wegen Code umstrukturierung", VoiceGender.Male, 2);
+
+        }
+
+        public void Update_Info()
+        {
             Jarvis.Code.SyS_Counter Info = new Jarvis.Code.SyS_Counter();
+
+            PerformanceCounter perfUptimeCount = new PerformanceCounter("System", "System Up Time");
+            perfUptimeCount.NextValue();
+            TimeSpan uptimeSpan = TimeSpan.FromSeconds(perfUptimeCount.NextValue());
+            string systemUptimeMessage = string.Format("Der Computer ist online seit {0} Tagen {1} Stunden {2} Minuten",
+                (int)uptimeSpan.TotalDays,
+                (int)uptimeSpan.Hours,
+                (int)uptimeSpan.Minutes
+                );
+            lbl_Uptime.Content = systemUptimeMessage;
+
+            Process currentProc = Process.GetCurrentProcess();
+            long memoryUsed = currentProc.PrivateMemorySize64 / 1024 / 1024;
+
             int CurrentCPU = Info.CPU_Count();
             int CurrentRAM = Info.RAM_Count();
 
@@ -96,11 +131,9 @@ namespace JarvisWPF
 
             lbl_CPU.Content = CPU;
             lbl_Ram.Content = RAM;
+            lbl_JavisRam.Content = "Jarvis nutzt " + Convert.ToString(memoryUsed) + " MB RAM";
 
-            Check.CPUandRam();
-            
-            //JarvisSpeak("Diese Funktion wurde Temporär entfernt wegen Code umstrukturierung", VoiceGender.Male, 2);
-
+            Thread.Sleep(500);
         }
 
         #region Speech
@@ -130,6 +163,20 @@ namespace JarvisWPF
         }
         #endregion
 
+        private void button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/MrPlayer141/Jarvis/issues");
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Update_Info();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://trello.com/b/CKa6GwBX/jarvis");
+        }
     }
 
 }
