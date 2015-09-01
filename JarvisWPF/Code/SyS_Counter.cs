@@ -32,7 +32,8 @@ namespace Jarvis.Code
             
             PerformanceCounter perfCpuCount = new PerformanceCounter("Processor Information", "% Processor Time", "_Total");
            perfCpuCount.NextValue();
-          int currentCpuPercentage = (int)perfCpuCount.NextValue();
+            int currentCpuPercentage = 0;
+            currentCpuPercentage = (int)perfCpuCount.NextValue();
             return currentCpuPercentage;
         }
 

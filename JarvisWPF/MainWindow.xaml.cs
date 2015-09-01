@@ -26,7 +26,8 @@ namespace JarvisWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        bool IDE = false;
+        bool IDE = true;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace JarvisWPF
 
         }
 
+        #region Startup
         public void startup()
         {
             if (IDE == true)
@@ -49,7 +51,6 @@ namespace JarvisWPF
             }
         }
 
-        #region Startup
         public void Version()
         {
             string sysVersion = string.Format("Willkommen . Ich lade Jarvis {0} Version {1} Punkt {2} Punkt {3} Punkt {4} Build {5}!",
@@ -96,15 +97,7 @@ namespace JarvisWPF
 
         #endregion
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Jarvis.BasicModule.CPU_RAM_HDD_Info Check = new Jarvis.BasicModule.CPU_RAM_HDD_Info();
-            Update_Info();
-            Check.CPUandRam();
-            
-            //JarvisSpeak("Diese Funktion wurde Temporär entfernt wegen Code umstrukturierung", VoiceGender.Male, 2);
-
-        }
+        #region Fuktionen
 
         public void Update_Info()
         {
@@ -136,6 +129,8 @@ namespace JarvisWPF
             Thread.Sleep(500);
         }
 
+        #endregion
+
         #region Speech
         public static SpeechSynthesizer synth = new SpeechSynthesizer();
         /// <summary>
@@ -163,20 +158,36 @@ namespace JarvisWPF
         }
         #endregion
 
+        #region Buttons
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Button: CPU and RAM Info
+            Jarvis.BasicModule.CPU_RAM_HDD_Info Check = new Jarvis.BasicModule.CPU_RAM_HDD_Info();
+            Update_Info();
+            Check.CPUandRam();
+
+            //JarvisSpeak("Diese Funktion wurde Temporär entfernt wegen Code umstrukturierung", VoiceGender.Male, 2);
+        }
+
         private void button_Click_1(object sender, RoutedEventArgs e)
         {
+            //Button: Fehler Melden
             Process.Start("https://github.com/MrPlayer141/Jarvis/issues");
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            //Button: Update
             Update_Info();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
+            //Button: Trello
             Process.Start("https://trello.com/b/CKa6GwBX/jarvis");
         }
+        #endregion
     }
 
 }
