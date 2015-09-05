@@ -8,26 +8,25 @@ namespace Jarvis.BasicModule
 {
     class CPU_RAM_HDD_Info
     {
-        #region Logic
 
         public void CPUandRam()
             {
             int speechSpeed = 1;
             JarvisSpeak("Starte Jarvis CPU und Arbeitspeicher Counter.", VoiceGender.Male, speechSpeed);
 
-            Jarvis.Code.SyS_Counter info = new Code.SyS_Counter();
+            Code.SyS_Counter info = new Code.SyS_Counter();
             int currentCpuPercentage = info.CPU_Count();
             int currentAvailableMemory = info.RAM_Count();
 
             Process currentProc = Process.GetCurrentProcess();
             long memoryUsed = currentProc.PrivateMemorySize64 / 1024 / 1024;
 
-            List<string> cpuMaxedOutMessages = new List<string>();
+             List<string> cpuMaxedOutMessages = new List<string>();
             cpuMaxedOutMessages.Add("ACHTUNG: Die CPU jagt official Eichhörnchen!");
             cpuMaxedOutMessages.Add("ALARM! ALARM! ALARM! ALARM! Ich bin überlastet!");
             cpuMaxedOutMessages.Add("ACHTUNG: Ich gehe gleich in Flammen auf!");
             cpuMaxedOutMessages.Add("Scheinbar wilst du ein Lagerfeuer in deinen Zimmer machen so wie du mich überlastest");
-            //cpuMaxedOutMessages.Add("Achtung ich bin überlastet stoppe den download deiner Pornos");
+            cpuMaxedOutMessages.Add("Achtung ich bin überlastet stoppe den download deiner Pornos");
             Random rand = new Random();
 
 
@@ -62,7 +61,6 @@ namespace Jarvis.BasicModule
         }
             
         }
-        #endregion
 
         #region Speech
         public static SpeechSynthesizer synth = new SpeechSynthesizer();
