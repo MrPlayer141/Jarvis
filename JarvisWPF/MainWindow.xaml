@@ -2,17 +2,18 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="350" Width="560" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label x:Name="lbl_CPU" Content="0%" HorizontalAlignment="Left" Margin="13,95,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_Ram" Content="RAM verfügbar: XXXX MB" HorizontalAlignment="Left" Margin="13,126,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_Uptime" Content="Uptime" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="14.667"/>
+
+        <Label x:Name="lbl_CPU" Content="0%" HorizontalAlignment="Left" Margin="13,82,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_Ram" Content="RAM verfügbar: XXXX MB" HorizontalAlignment="Left" Margin="13,113,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_Uptime" Content="Uptime" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" FontSize="14.667"/>
         <Button Content="Start Jarvis CPU Mem Count" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="176" Click="Button_Click"/>
         <Label x:Name="label" Content="Jarvis" HorizontalAlignment="Left" Margin="417,10,0,0" VerticalAlignment="Top" FontFamily="Terminator Two" FontSize="26.667"/>
-        <Label x:Name="lbl_JavisRam" Content="Label" HorizontalAlignment="Left" Margin="191,126,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_JavisRam" Content="Label" HorizontalAlignment="Left" Margin="191,113,0,0" VerticalAlignment="Top"/>
         <Button x:Name="button" Content="Fehler melden" HorizontalAlignment="Left" Margin="460,289,0,0" VerticalAlignment="Top" Width="84" Click="button_Click_1"/>
         <Button x:Name="button1" Content="Update Screen" HorizontalAlignment="Left" Margin="368,289,0,0" VerticalAlignment="Top" Width="87" Click="button1_Click"/>
         <Button x:Name="button2" Content="Trello" HorizontalAlignment="Left" Margin="460,264,0,0" VerticalAlignment="Top" Width="84" Click="button2_Click"/>
-        <Button x:Name="button3" Content="Login" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Width="45"/>
-        <Button x:Name="button4" Content="Einstellungen" HorizontalAlignment="Left" Margin="60,23,0,0" VerticalAlignment="Top" Width="89"/>
+        <Button x:Name="button3" Content="Login" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="45" Click="button3_Click"/>
+        <Button x:Name="button4" Content="Einstellungen" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top" Width="89" Click="button4_Click"/>
 
     </Grid>
 </Window>

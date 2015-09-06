@@ -186,6 +186,21 @@ namespace JarvisWPF
         {
             //Button: Trello
             Process.Start("https://trello.com/b/CKa6GwBX/jarvis");
+        }       
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            //Button: Einstellungen
+            Jarvis.Settings window = new Jarvis.Settings();
+            window.Show();
+
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            //Button: Login
+            Jarvis.AdminRoom Admin = new Jarvis.AdminRoom();
+            Admin.Show();
         }
         #endregion
     }

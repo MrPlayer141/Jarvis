@@ -19,9 +19,45 @@ namespace Jarvis
     /// </summary>
     public partial class AdminRoom : Window
     {
+
+        #region Main
         public AdminRoom()
         {
             InitializeComponent();
+            lbl_AdminRoom.Visibility = Visibility.Hidden;
         }
+        #endregion
+
+        #region Admin Username
+
+        public string admin_name()
+        {
+            string Username;
+            return Username = "Game_Gen";
+        }
+
+        public string admin_password()
+        {
+            string password;
+            return password = "MIcUha";
+        }
+
+        #endregion
+
+        #region Button
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            if (tBox_User.Text == admin_name() && tBox_pass.Text == admin_password())
+            {
+                MessageBox.Show("Wilkommen Main-Developer", "Wilkommen admin", MessageBoxButton.OK, MessageBoxImage.Information);
+                lbl_AdminRoom.Visibility = Visibility.Visible;
+                lbl_Login.Visibility = Visibility.Hidden;
+            }
+        }
+
+        #endregion
+
     }
 }
+
