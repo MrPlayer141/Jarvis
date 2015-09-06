@@ -26,7 +26,7 @@ namespace JarvisWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        bool IDE = true;
+        bool IDE = false;
 
         public MainWindow()
         {
@@ -58,8 +58,8 @@ namespace JarvisWPF
                 (int) 1,
                 (int) 0,
                 (int) 0,
-                (int) 2,
-                (int) 1100
+                (int) 3,
+                (int) 1163
                 );
             JarvisSpeak(sysVersion, VoiceGender.Male, 1);
         }
