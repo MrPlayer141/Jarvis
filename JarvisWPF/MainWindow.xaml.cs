@@ -26,7 +26,7 @@ namespace JarvisWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        bool IDE = false;
+        bool IDE = true;
 
         public MainWindow()
         {
