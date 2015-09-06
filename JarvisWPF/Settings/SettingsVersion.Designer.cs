@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Jarvis {
+namespace Jarvis.Settings {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
-    internal sealed partial class SettingsUser : global::System.Configuration.ApplicationSettingsBase {
+    internal sealed partial class SettingsVersion : global::System.Configuration.ApplicationSettingsBase {
         
-        private static SettingsUser defaultInstance = ((SettingsUser)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new SettingsUser())));
+        private static SettingsVersion defaultInstance = ((SettingsVersion)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new SettingsVersion())));
         
-        public static SettingsUser Default {
+        public static SettingsVersion Default {
             get {
                 return defaultInstance;
             }

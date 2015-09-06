@@ -60,17 +60,22 @@
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SettingsAdmin.Designer.cs">
+    <Compile Include="Settings\SettingsAdmin.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>SettingsAdmin.settings</DependentUpon>
     </Compile>
-    <Compile Include="SettingsUser.Designer.cs">
+    <Compile Include="Settings\SettingsUser.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>SettingsUser.settings</DependentUpon>
     </Compile>
-    <Compile Include="SettingsWindow.Designer.cs">
+    <Compile Include="Settings\SettingsVersion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>SettingsVersion.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\SettingsWindow.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>SettingsWindow.settings</DependentUpon>
@@ -127,15 +132,19 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="SettingsAdmin.settings">
+    <None Include="Settings\SettingsAdmin.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>SettingsAdmin.Designer.cs</LastGenOutput>
     </None>
-    <None Include="SettingsUser.settings">
+    <None Include="Settings\SettingsUser.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>SettingsUser.Designer.cs</LastGenOutput>
     </None>
-    <None Include="SettingsWindow.settings">
+    <None Include="Settings\SettingsVersion.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>SettingsVersion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Settings\SettingsWindow.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>SettingsWindow.Designer.cs</LastGenOutput>
     </None>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Jarvis {
+namespace Jarvis.Settings {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
