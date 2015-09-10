@@ -7,12 +7,15 @@
         mc:Ignorable="d" Height="350" Width="450" ResizeMode="NoResize">
     <Grid>
         <TextBox x:Name="tBox_User" Height="23" Margin="185,106,175,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="tBox_pass" HorizontalAlignment="Left" Height="23" Margin="185,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="label" Content="Username:" Margin="185,80,175,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_AdminRoom" Content="Jarvis Admin room" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="424" AllowDrop="True" FontSize="26.667" FontFamily="Terminator Two" d:IsHidden="True"/>
         <Label x:Name="label2" Content="Passwort:" HorizontalAlignment="Left" Margin="185,134,0,0" VerticalAlignment="Top" Width="84"/>
         <Label x:Name="lbl_Login" Content="jarvis login" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="424" FontSize="26.667" FontFamily="Terminator Two"/>
         <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="185,206,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="btn_Install_key" Content="Install Keylogger" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="102" Click="button1_Click" Visibility="Hidden"/>
+        <Button x:Name="btn_Logout" Content="Logout" HorizontalAlignment="Left" Margin="359,52,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click_1"/>
+        <Button x:Name="btn_What" Content="Was ist das?" HorizontalAlignment="Left" Margin="359,16,0,0" VerticalAlignment="Top" Width="75"/>
+        <PasswordBox x:Name="tBox_pass" HorizontalAlignment="Left" Margin="185,165,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

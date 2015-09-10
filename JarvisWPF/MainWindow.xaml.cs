@@ -13,10 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Speech.Synthesis;
 using System.Diagnostics;
 using System.Threading;
-using System.Speech.Synthesis;
-
 
 namespace JarvisWPF
 {
@@ -26,91 +25,25 @@ namespace JarvisWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        bool IDE = false;
+        
 
         public MainWindow()
         {
+            Jarvis.Code.Startup st = new Jarvis.Code.Startup();
             InitializeComponent();
             Update_Info();
-            startup();
+            st.startup();
 
         }
 
-        #region Startup
-        public void startup()
-        {
-            if (IDE == true)
-            {}
-            else
-            {
-                Version();
-                Uptime();
-                Hello();
-                bugDisclamer();
-                roadmap();
-            }
-        }
-
-        public void Version()
-        {
-            string sysVersion = string.Format("Willkommen . Ich lade Jarvis {0} Version {1} Punkt {2} Punkt {3} Punkt {4} Build {5}!",
-                (string)"Alpha",
-                (int) 1,
-                (int) 0,
-                (int) 0,
-                (int) 3,
-                (int) 1163
-                );
-            JarvisSpeak(sysVersion, VoiceGender.Male, 1);
-        }
-        
-        public void Uptime()
-        {
-            PerformanceCounter perfUptimeCount = new PerformanceCounter("System", "System Up Time");
-            perfUptimeCount.NextValue();
-            TimeSpan uptimeSpan = TimeSpan.FromSeconds(perfUptimeCount.NextValue());
-            string systemUptimeMessage = string.Format("Der Computer ist online seit {0} Tagen {1} Stunden {2} Minuten",
-                (int)uptimeSpan.TotalDays,
-                (int)uptimeSpan.Hours,
-                (int)uptimeSpan.Minutes
-                );
-
-            JarvisSpeak(systemUptimeMessage, VoiceGender.Male, 1);
-            lbl_Uptime.Content = systemUptimeMessage;
-        }
-
-        public void Hello()
-        {
-            JarvisSpeak("Wilkommen ich bin Jarvis. Das Laden weitere Informationen ist bald verfügbar, sowie das selbst Aktualisieren und die Unterstützung mehere Sprachen.", VoiceGender.Male, 2);
-        }
-
-        public void bugDisclamer()
-        {
-            JarvisSpeak("Die Entwicklung von Jarvis hat noch keinen stabielen zustand erreicht. Deshalb können noch fehler auftreten. Fehler können auf Git Hab gemeldet werden.", VoiceGender.Female, 1);
-        }
-
-        public void roadmap()
-        {
-            JarvisSpeak("Die geplante Weiterentwicklung von Jarvis kann auf Trello punkt Kom angeschaut werden.", VoiceGender.Male, 1);
-
-        }
-
-        #endregion
 
         #region Fuktionen
 
         public void Update_Info()
         {
             Jarvis.Code.SyS_Counter Info = new Jarvis.Code.SyS_Counter();
-
-            PerformanceCounter perfUptimeCount = new PerformanceCounter("System", "System Up Time");
-            perfUptimeCount.NextValue();
-            TimeSpan uptimeSpan = TimeSpan.FromSeconds(perfUptimeCount.NextValue());
-            string systemUptimeMessage = string.Format("Der Computer ist online seit {0} Tagen {1} Stunden {2} Minuten",
-                (int)uptimeSpan.TotalDays,
-                (int)uptimeSpan.Hours,
-                (int)uptimeSpan.Minutes
-                );
+            string systemUptimeMessage = Info.Uptime();
+            
             lbl_Uptime.Content = systemUptimeMessage;
 
             Process currentProc = Process.GetCurrentProcess();
@@ -191,7 +124,7 @@ namespace JarvisWPF
         private void button4_Click(object sender, RoutedEventArgs e)
         {
             //Button: Einstellungen
-            Jarvis.Settings window = new Jarvis.Settings();
+            Jarvis.Settings.WindowSettings window = new Jarvis.Settings.WindowSettings();
             window.Show();
 
         }

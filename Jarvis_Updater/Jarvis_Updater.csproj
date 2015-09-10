@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{57C45F42-A3B7-428C-A7C0-323724224945}</ProjectGuid>
+    <ProjectGuid>{921FC8FF-8022-4247-AF66-324F6C091713}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jarvis</RootNamespace>
-    <AssemblyName>Jarvis</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>Jarvis_Updater</RootNamespace>
+    <AssemblyName>Jarvis_Updater</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,15 +37,12 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.IO.Log" />
-    <Reference Include="System.Net" />
-    <Reference Include="System.Speech" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -57,59 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Code\Modul_installer.cs" />
-    <Compile Include="Code\SelfUpdate.cs" />
-    <Compile Include="Settings\SettingsAdmin.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>SettingsAdmin.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Settings\SettingsUser.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>SettingsUser.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Settings\SettingsVersion.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>SettingsVersion.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Settings\SettingsWindow.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>SettingsWindow.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Settings\WindowSettings.xaml.cs">
-      <DependentUpon>WindowSettings.xaml</DependentUpon>
-    </Compile>
-    <Page Include="AdminRoom.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AdminRoom.xaml.cs">
-      <DependentUpon>AdminRoom.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BasicModule\CPU_RAM_HDD_Info.cs" />
-    <Compile Include="Code\SyS_Counter.cs" />
-    <Compile Include="Code\Drunk_Mode.cs" />
-    <Compile Include="Code\Speech.cs" />
-    <Compile Include="Code\Startup.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Settings\WindowSettings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -134,28 +91,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Settings\SettingsAdmin.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>SettingsAdmin.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Settings\SettingsUser.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>SettingsUser.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Settings\SettingsVersion.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>SettingsVersion.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Settings\SettingsWindow.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>SettingsWindow.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="JarvisStringTable\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -34,5 +34,17 @@ namespace Jarvis.Properties {
                 this["langue"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool fastStart {
+            get {
+                return ((bool)(this["fastStart"]));
+            }
+            set {
+                this["fastStart"] = value;
+            }
+        }
     }
 }

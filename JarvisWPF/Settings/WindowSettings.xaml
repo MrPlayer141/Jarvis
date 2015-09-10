@@ -1,9 +1,9 @@
-﻿<Window x:Class="Jarvis.Settings"
+﻿<Window x:Class="Jarvis.Settings.WindowSettings"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Jarvis"
+        xmlns:local="clr-namespace:Jarvis.Settings"
         mc:Ignorable="d" Height="425" Width="425" Background="#FFCDCDCD" ResizeMode="NoResize">
     <Grid>
         <Button x:Name="button" Content="Modul installer" HorizontalAlignment="Left" Margin="315,55,0,0" VerticalAlignment="Top" Width="92"/>

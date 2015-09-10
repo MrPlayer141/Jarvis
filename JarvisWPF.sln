@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JarvisWPF", "JarvisWPF\Jarv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jarvis_Mod_Keylogger", "Jarvis_Mod_Keylogger\Jarvis_Mod_Keylogger.csproj", "{F9FC49B7-8885-4074-8C6F-B8CFDB5799FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jarvis_Updater", "Jarvis_Updater\Jarvis_Updater.csproj", "{921FC8FF-8022-4247-AF66-324F6C091713}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F9FC49B7-8885-4074-8C6F-B8CFDB5799FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9FC49B7-8885-4074-8C6F-B8CFDB5799FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9FC49B7-8885-4074-8C6F-B8CFDB5799FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{921FC8FF-8022-4247-AF66-324F6C091713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{921FC8FF-8022-4247-AF66-324F6C091713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{921FC8FF-8022-4247-AF66-324F6C091713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{921FC8FF-8022-4247-AF66-324F6C091713}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
