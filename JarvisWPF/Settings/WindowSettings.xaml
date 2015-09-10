@@ -8,12 +8,14 @@
     <Grid>
         <Button x:Name="button" Content="Modul installer" HorizontalAlignment="Left" Margin="315,55,0,0" VerticalAlignment="Top" Width="92"/>
         <Label x:Name="label" Content="Jarvis schnellstart:" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button1" Content="Anschalten" HorizontalAlignment="Left" Margin="252,99,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button2" Content="Ausschalten" HorizontalAlignment="Left" Margin="332,99,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_fastOn" Content="Anschalten" HorizontalAlignment="Left" Margin="252,99,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <Button x:Name="btn_fastOff" Content="Ausschalten" HorizontalAlignment="Left" Margin="332,99,0,0" VerticalAlignment="Top" Width="75" Click="btn_fastOff_Click"/>
         <Label x:Name="label1" Content="Jarvis ohne Sprachausgebe:" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button3" Content="Anschalten" HorizontalAlignment="Left" Margin="252,130,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button4" Content="Ausschalten" HorizontalAlignment="Left" Margin="332,130,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_silentOn" Content="Anschalten" HorizontalAlignment="Left" Margin="252,130,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_silentOff" Content="Ausschalten" HorizontalAlignment="Left" Margin="332,130,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="label2" Content="Jarvis Einstellungen" Margin="10,10,10,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Terminator Two"/>
+        <Label x:Name="label3" Content="" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button1" Content="Jarvis reparieren" HorizontalAlignment="Left" Margin="218,55,0,0" VerticalAlignment="Top" Width="92"/>
 
     </Grid>
 </Window>

@@ -65,7 +65,7 @@ namespace Jarvis.Code
             else
             {
                 //JarvisSpeak("Jarvis ist auf den neusten Stand.", VoiceGender.Male, 1);
-                JarvisSpeak("Das Automatische Updaten von Jarvis ist in der nächsten Version eingebaut!", VoiceGender.Male, 1);
+                JarvisSpeak("Das Automatische Up-Daten von Jarvis ist in der nächsten Version eingebaut!", VoiceGender.Male, 1);
             }
         }
 

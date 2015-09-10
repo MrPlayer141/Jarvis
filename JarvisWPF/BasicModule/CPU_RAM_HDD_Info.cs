@@ -15,7 +15,9 @@ namespace Jarvis.BasicModule
             JarvisSpeak("Starte Jarvis CPU und Arbeitspeicher Counter.", VoiceGender.Male, speechSpeed);
 
             Code.SyS_Counter info = new Code.SyS_Counter();
-            int currentCpuPercentage = info.CPU_Count();
+            float perfCPUCount = info.CPU_Count();
+            int currentCpuPercentage;
+            currentCpuPercentage = (int)perfCPUCount;
             int currentAvailableMemory = info.RAM_Count();
 
             Process currentProc = Process.GetCurrentProcess();

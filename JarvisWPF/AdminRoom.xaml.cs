@@ -21,6 +21,7 @@ namespace Jarvis
     /// </summary>
     public partial class AdminRoom : Window
     {
+        string x;
 
         #region Main
         public AdminRoom()
@@ -28,6 +29,7 @@ namespace Jarvis
             InitializeComponent();
             lbl_AdminRoom.Visibility = Visibility.Hidden;
             btn_Logout.Visibility = Visibility.Hidden;
+            lbl_User.Visibility = Visibility.Hidden;
         }
         #endregion
 
@@ -62,6 +64,7 @@ namespace Jarvis
 
         #region Button
 
+        
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
@@ -72,29 +75,19 @@ namespace Jarvis
             y.Add("Wilkommen Main-Developer !");
             y.Add("Wilkommen Ente !");
             y.Add("Wilkommen ");
-
+            
             if (tBox_User.Text == admin_name() && tBox_pass.Password == admin_password())
             {
-                string x = y[0];
-                lbl_AdminRoom.Visibility = Visibility.Visible;
-                lbl_Login.Visibility = Visibility.Hidden;
-                btn_Install_key.Visibility = Visibility.Visible;
-                btn_Logout.Visibility = Visibility.Visible;
-
-                MessageBox.Show(x, "Wilkommen Admin", MessageBoxButton.OK, MessageBoxImage.Information);
+                x = y[0]; Admin_True();
             }
             else if (tBox_User.Text == Ente_name() && tBox_pass.Password == Ente_password())
             {
-                string x = y[1];
-                lbl_AdminRoom.Visibility = Visibility.Visible;
-                lbl_Login.Visibility = Visibility.Hidden;
-                btn_Logout.Visibility = Visibility.Visible;
-                MessageBox.Show(x, "Wilkommen Admin", MessageBoxButton.OK, MessageBoxImage.Information);
+                x = y[1]; Admin_True();
             }
             else if (tBox_pass.Password == Nothing)
             {
                 User = tBox_User.Text;
-                string x = y[2] + User;
+                x = y[2] + User;
                 MessageBox.Show(x, "Wilkommen User", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }
@@ -104,21 +97,56 @@ namespace Jarvis
                 lbl_Login.Visibility = Visibility.Visible;
                 btn_Install_key.Visibility = Visibility.Hidden;
                 btn_Logout.Visibility = Visibility.Hidden;
+                lbl_Module.Visibility = Visibility.Hidden;
+                MessageBox.Show("Benutzername oder Passwort falsch!", "Fehler");
             }
 
-
+            
         }
 
+        private void Admin_True()
+        {
 
+            lbl_User.Content = "Wilkommen " + tBox_User.Text;
+            tBox_pass.Password = "";
+            tBox_User.Text = "";
+
+            lbl_Login.Visibility = Visibility.Hidden;
+            lbl_Username.Visibility = Visibility.Hidden;
+            lbl_Password.Visibility = Visibility.Hidden;
+            tBox_pass.Visibility = Visibility.Hidden;
+            tBox_User.Visibility = Visibility.Hidden;
+            btn_Login.Visibility = Visibility.Hidden;
+
+            lbl_AdminRoom.Visibility = Visibility.Visible;
+            lbl_Module.Visibility = Visibility.Visible;
+            btn_Install_key.Visibility = Visibility.Visible;
+            btn_Logout.Visibility = Visibility.Visible;
+            lbl_User.Visibility = Visibility.Visible;
+
+            MessageBox.Show(x, "Wilkommen Admin", MessageBoxButton.OK, MessageBoxImage.Information);
+
+        }
        
         private void button1_Click_1(object sender, RoutedEventArgs e)
         {
             //Button: Logout
+
+            lbl_Login.Visibility = Visibility.Visible;
+            lbl_Username.Visibility = Visibility.Visible;
+            lbl_Password.Visibility = Visibility.Visible;
+            tBox_pass.Visibility = Visibility.Visible;
+            tBox_User.Visibility = Visibility.Visible;
+            btn_Login.Visibility = Visibility.Visible;
+
             lbl_AdminRoom.Visibility = Visibility.Hidden;
             lbl_Login.Visibility = Visibility.Visible;
             btn_Install_key.Visibility = Visibility.Hidden;
+            lbl_User.Visibility = Visibility.Hidden;
+            lbl_User.Content = "";
             tBox_pass.Password = "";
             tBox_User.Text = "";
+            lbl_Module.Visibility = Visibility.Hidden;
 
         }
 

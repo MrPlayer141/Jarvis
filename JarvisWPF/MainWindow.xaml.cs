@@ -42,24 +42,31 @@ namespace JarvisWPF
         public void Update_Info()
         {
             Jarvis.Code.SyS_Counter Info = new Jarvis.Code.SyS_Counter();
-            string systemUptimeMessage = Info.Uptime();
-            
+
+            string CPU = "";
+            string RAM = "";
+            int CurrentCPU = 0;
+            int CurrentRAM = 0;
+            long memoryUsed = 0;
+            string systemUptimeMessage = "";
+            float CPUCount = 0;
+
+            systemUptimeMessage = Info.Uptime();
             lbl_Uptime.Content = systemUptimeMessage;
 
             Process currentProc = Process.GetCurrentProcess();
-            long memoryUsed = currentProc.PrivateMemorySize64 / 1024 / 1024;
+            memoryUsed = currentProc.PrivateMemorySize64 / 1024 / 1024;
 
-            int CurrentCPU = Info.CPU_Count();
-            int CurrentRAM = Info.RAM_Count();
+            CPUCount = Info.CPU_Count();
+            CurrentCPU = (int)CPUCount;
+            CurrentRAM = Info.RAM_Count();
 
-            string CPU = "CPU Belastung: " + Convert.ToString(CurrentCPU) + "%";
-            string RAM = "RAM verfügbar: " + Convert.ToString(CurrentRAM) + "MB";
+             CPU = "Counter Defekt -> CPU Belastung: " + Convert.ToString(CurrentCPU) + "%";
+             RAM = "RAM verfügbar: " + Convert.ToString(CurrentRAM) + "MB";
 
             lbl_CPU.Content = CPU;
             lbl_Ram.Content = RAM;
             lbl_JavisRam.Content = "Jarvis nutzt " + Convert.ToString(memoryUsed) + " MB RAM";
-
-            Thread.Sleep(500);
         }
 
         #endregion
