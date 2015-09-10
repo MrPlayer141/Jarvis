@@ -25,8 +25,6 @@ namespace JarvisWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-
         public MainWindow()
         {
             Jarvis.Code.Startup st = new Jarvis.Code.Startup();
@@ -35,7 +33,6 @@ namespace JarvisWPF
             st.startup();
 
         }
-
 
         #region Fuktionen
 

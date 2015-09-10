@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -63,6 +65,11 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>SettingsAdmin.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\SettingsModule.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>SettingsModule.settings</DependentUpon>
     </Compile>
     <Compile Include="Settings\SettingsUser.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -137,6 +144,10 @@
     <None Include="Settings\SettingsAdmin.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>SettingsAdmin.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Settings\SettingsModule.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>SettingsModule.Designer.cs</LastGenOutput>
     </None>
     <None Include="Settings\SettingsUser.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

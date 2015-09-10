@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 using System.Speech.Synthesis;
 using System.Diagnostics;
 using System.Threading;
@@ -33,7 +32,7 @@ namespace Jarvis.Code
             }
         }
 
-        public void Version()
+        private void Version()
         {
             string sysVersion = string.Format("Willkommen . Ich lade Jarvis {0} Version {1} Punkt {2} Punkt {3} Punkt {4} Build {5}!",
                 (string)"Alpha",
@@ -46,13 +45,13 @@ namespace Jarvis.Code
             JarvisSpeak(sysVersion, VoiceGender.Male, 1);
         }
 
-        public void Uptime()
+        private void Uptime()
         {
             string systemUptimeMessage = Count.Uptime();           
             JarvisSpeak(systemUptimeMessage, VoiceGender.Male, 1);
         }
 
-        public void Updates()
+        private void Updates()
         {
             bool avable = false;
             //JarvisSpeak("Ich überprüfe ob ein Update für Jarvis verfügbar ist", VoiceGender.Male, 1);
@@ -69,24 +68,23 @@ namespace Jarvis.Code
             }
         }
 
-        public void Hello()
+        private void Hello()
         {
             JarvisSpeak("Wilkommen ich bin Jarvis. Das Laden weitere Informationen ist bald verfügbar, sowie die Unterstützung mehere Sprachen.", VoiceGender.Male, 2);
         }
 
-        public void bugDisclamer()
+        private void bugDisclamer()
         {
             JarvisSpeak("Die Entwicklung von Jarvis hat noch keinen stabielen zustand erreicht. Deshalb können noch fehler auftreten. Fehler können auf Git Hab gemeldet werden.", VoiceGender.Female, 1);
         }
 
-        public void roadmap()
+        private void roadmap()
         {
             JarvisSpeak("Die geplante Weiterentwicklung von Jarvis kann auf Trello punkt Kom angeschaut werden.", VoiceGender.Male, 1);
 
         }
 
         #endregion
-
 
         #region Speech
         public static SpeechSynthesizer synth = new SpeechSynthesizer();
