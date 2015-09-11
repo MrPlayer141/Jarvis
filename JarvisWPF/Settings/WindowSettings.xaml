@@ -4,18 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Jarvis.Settings"
-        mc:Ignorable="d" Height="425" Width="425" Background="#FFCDCDCD" ResizeMode="NoResize">
+        mc:Ignorable="d" Height="425" Width="455" Background="#FFCDCDCD" ResizeMode="NoResize">
     <Grid>
-        <Button x:Name="button" Content="Modul installer" HorizontalAlignment="Left" Margin="315,55,0,0" VerticalAlignment="Top" Width="92"/>
+        <Button x:Name="button" Content="Modul installer" HorizontalAlignment="Left" Margin="347,55,0,0" VerticalAlignment="Top" Width="92"/>
         <Label x:Name="label" Content="Jarvis schnellstart:" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_fastOn" Content="Anschalten" HorizontalAlignment="Left" Margin="252,99,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-        <Button x:Name="btn_fastOff" Content="Ausschalten" HorizontalAlignment="Left" Margin="332,99,0,0" VerticalAlignment="Top" Width="75" Click="btn_fastOff_Click"/>
+        <Button x:Name="btn_fastOn" Content="Anschalten" HorizontalAlignment="Left" Margin="284,99,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <Button x:Name="btn_fastOff" Content="Ausschalten" HorizontalAlignment="Left" Margin="364,99,0,0" VerticalAlignment="Top" Width="75" Click="btn_fastOff_Click"/>
         <Label x:Name="label1" Content="Jarvis ohne Sprachausgebe:" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_silentOn" Content="Anschalten" HorizontalAlignment="Left" Margin="252,130,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btn_silentOff" Content="Ausschalten" HorizontalAlignment="Left" Margin="332,130,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="label2" Content="Jarvis Einstellungen" Margin="10,10,10,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Terminator Two"/>
+        <Button x:Name="btn_silentOn" Content="Anschalten" HorizontalAlignment="Left" Margin="284,130,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_silentOff" Content="Ausschalten" HorizontalAlignment="Left" Margin="364,130,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label2" Content="Jarvis Einstellungen" Margin="10,10,60,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Terminator Two"/>
         <Label x:Name="label3" Content="" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button1" Content="Jarvis reparieren" HorizontalAlignment="Left" Margin="218,55,0,0" VerticalAlignment="Top" Width="92"/>
+        <Button x:Name="button1" Content="Jarvis reparieren" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="92"/>
+        <Grid x:Name="Grid_VoiceInfo" HorizontalAlignment="Left" Height="80" Margin="0,275,0,0" VerticalAlignment="Top" Width="449">
+            <Label x:Name="lbl_Culture" Content="Culture" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,10,0,0"/>
+            <Label x:Name="label4" Content="Jarvis Sprache:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+            <Label x:Name="label5" Content="Speech alter:" HorizontalAlignment="Left" Margin="326,10,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_Age" Content="Age" HorizontalAlignment="Left" Margin="403,10,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="label6" Content="Voice Geschlecht:" HorizontalAlignment="Left" Margin="164,10,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_Gender" Content="Gender" HorizontalAlignment="Left" Margin="272,10,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="label7" Content="Lautstärke:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+            <ProgressBar x:Name="pBar" HorizontalAlignment="Left" Height="26" Margin="82,41,0,0" VerticalAlignment="Top" Width="352"/>
+            <Label x:Name="lbl_Sound" Content="0" HorizontalAlignment="Left" Margin="229,41,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Label x:Name="label8" Content="Jarvis Version:" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_Version" Content="Version" HorizontalAlignment="Left" Margin="99,360,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label9" Content="Lautstärke :" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="208,161,0,0" VerticalAlignment="Top" Width="230" Maximum="100" ValueChanged="slider_ValueChanged" Height="20"/>
+        <Button x:Name="button2" Content="Lautstärke Testen" HorizontalAlignment="Left" Margin="99,161,0,0" VerticalAlignment="Top" Width="104" Click="button2_Click"/>
 
     </Grid>
 </Window>

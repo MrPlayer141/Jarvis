@@ -34,13 +34,14 @@ namespace Jarvis.Code
 
         private void Version()
         {
+
             string sysVersion = string.Format("Willkommen . Ich lade Jarvis {0} Version {1} Punkt {2} Punkt {3} Punkt {4} Build {5}!",
-                (string)"Alpha",
-                (int)1,
-                (int)0,
-                (int)0,
-                (int)4,
-                (int)1231
+                (string)Settings.SettingsVersion.Default.Main,
+                (int)Settings.SettingsVersion.Default.Ver_Main,
+                (int)Settings.SettingsVersion.Default.Ver_Unter,
+                (int)Settings.SettingsVersion.Default.Ver_Pre,
+                (int)Settings.SettingsVersion.Default.Ver_PreBuild,
+                (int)Settings.SettingsVersion.Default.Build
                 );
             JarvisSpeak(sysVersion, VoiceGender.Male, 1);
         }

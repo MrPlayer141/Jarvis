@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Jarvis"
-        mc:Ignorable="d" Height="350" Width="450" ResizeMode="NoResize">
+        mc:Ignorable="d" Height="350" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBox x:Name="tBox_User" Height="23" Margin="185,75,175,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <PasswordBox x:Name="tBox_pass" HorizontalAlignment="Left" Margin="185,134,0,0" VerticalAlignment="Top" Width="75" Height="23"/>

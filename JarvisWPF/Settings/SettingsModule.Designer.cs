@@ -22,5 +22,17 @@ namespace Jarvis.Settings {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Key {
+            get {
+                return ((bool)(this["Key"]));
+            }
+            set {
+                this["Key"] = value;
+            }
+        }
     }
 }
