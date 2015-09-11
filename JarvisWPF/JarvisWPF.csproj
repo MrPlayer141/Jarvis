@@ -94,6 +94,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>SettingsAdmin.settings</DependentUpon>
     </Compile>
+    <Compile Include="Settings\SettingsJarvis.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>SettingsJarvis.settings</DependentUpon>
+    </Compile>
     <Compile Include="Settings\SettingsModule.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -172,6 +177,10 @@
     <None Include="Settings\SettingsAdmin.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>SettingsAdmin.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Settings\SettingsJarvis.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>SettingsJarvis.Designer.cs</LastGenOutput>
     </None>
     <None Include="Settings\SettingsModule.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

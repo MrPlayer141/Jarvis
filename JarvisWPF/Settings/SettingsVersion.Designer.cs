@@ -85,7 +85,7 @@ namespace Jarvis.Settings {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1412")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1422")]
         public int Build {
             get {
                 return ((int)(this["Build"]));

@@ -5,8 +5,5 @@
     <Setting Name="langue" Type="System.String" Scope="User">
       <Value Profile="(Default)">De-de</Value>
     </Setting>
-    <Setting Name="fastStart" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
   </Settings>
 </SettingsFile>

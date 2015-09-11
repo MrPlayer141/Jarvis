@@ -14,7 +14,7 @@ namespace Jarvis.Code
     {
         #region Startup
 
-        bool IDE = Properties.Settings.Default.fastStart;
+        bool IDE = Settings.SettingsJarvis.Default.fastStart;
         SyS_Counter Count = new SyS_Counter();
 
         public void startup()
@@ -23,6 +23,7 @@ namespace Jarvis.Code
             { }
             else
             {
+                synth.Volume = Settings.SettingsJarvis.Default.Volume;
                 Version();
                 Uptime();
                 Updates();

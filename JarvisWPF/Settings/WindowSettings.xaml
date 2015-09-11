@@ -11,9 +11,9 @@
         <Button x:Name="btn_fastOn" Content="Anschalten" HorizontalAlignment="Left" Margin="284,99,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
         <Button x:Name="btn_fastOff" Content="Ausschalten" HorizontalAlignment="Left" Margin="364,99,0,0" VerticalAlignment="Top" Width="75" Click="btn_fastOff_Click"/>
         <Label x:Name="label1" Content="Jarvis ohne Sprachausgebe:" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_silentOn" Content="Anschalten" HorizontalAlignment="Left" Margin="284,130,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btn_silentOff" Content="Ausschalten" HorizontalAlignment="Left" Margin="364,130,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="label2" Content="Jarvis Einstellungen" Margin="10,10,60,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Terminator Two"/>
+        <Button x:Name="btn_silentOn" Content="Anschalten" HorizontalAlignment="Left" Margin="284,130,0,0" VerticalAlignment="Top" Width="75" Click="btn_silentOn_Click"/>
+        <Button x:Name="btn_silentOff" Content="Ausschalten" HorizontalAlignment="Left" Margin="364,130,0,0" VerticalAlignment="Top" Width="75" Click="btn_silentOff_Click"/>
+        <Label x:Name="label2" Content="Jarvis Einstellungen" Margin="10,10,44,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Terminator Two"/>
         <Label x:Name="label3" Content="" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top"/>
         <Button x:Name="button1" Content="Jarvis reparieren" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="92"/>
         <Grid x:Name="Grid_VoiceInfo" HorizontalAlignment="Left" Height="80" Margin="0,275,0,0" VerticalAlignment="Top" Width="449">
@@ -31,7 +31,8 @@
         <Label x:Name="lbl_Version" Content="Version" HorizontalAlignment="Left" Margin="99,360,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label9" Content="Lautstärke :" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top"/>
         <Slider x:Name="slider" HorizontalAlignment="Left" Margin="208,161,0,0" VerticalAlignment="Top" Width="230" Maximum="100" ValueChanged="slider_ValueChanged" Height="20"/>
-        <Button x:Name="button2" Content="Lautstärke Testen" HorizontalAlignment="Left" Margin="99,161,0,0" VerticalAlignment="Top" Width="104" Click="button2_Click"/>
+        <Button x:Name="btn_TestSound" Content="Lautstärke Testen" HorizontalAlignment="Left" Margin="99,161,0,0" VerticalAlignment="Top" Width="104" Click="button2_Click"/>
+        <Button x:Name="button3" Content="Speichern" HorizontalAlignment="Left" Margin="364,367,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click"/>
 
     </Grid>
 </Window>

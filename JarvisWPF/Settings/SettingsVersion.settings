@@ -18,7 +18,7 @@
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="Build" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1412</Value>
+      <Value Profile="(Default)">1422</Value>
     </Setting>
   </Settings>
 </SettingsFile>

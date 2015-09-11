@@ -29,6 +29,10 @@ namespace Jarvis.Settings
             init_Infos();
         }
 
+        #region var
+
+        #endregion
+
         private void init_Infos()
         {
             string Version = string.Format("{0} {1}.{2}.{3}.{4} Build {5}",
@@ -39,7 +43,7 @@ namespace Jarvis.Settings
                (int)SettingsVersion.Default.Ver_PreBuild,
                (int)SettingsVersion.Default.Build
                );
-
+            synth.Volume = SettingsJarvis.Default.Volume;
             lbl_Culture.Content = synth.Voice.Culture;
             lbl_Age.Content = synth.Voice.Age;
             lbl_Gender.Content = synth.Voice.Gender;
@@ -52,7 +56,7 @@ namespace Jarvis.Settings
         private void init_Buttons()
         {
 
-            if (Properties.Settings.Default.fastStart == true)
+            if (SettingsJarvis.Default.fastStart == true)
             {
                 btn_fastOff.IsEnabled = true;
                 btn_fastOn.IsEnabled = false;
@@ -63,6 +67,16 @@ namespace Jarvis.Settings
                 btn_fastOn.IsEnabled = true;
             }
 
+            if (SettingsJarvis.Default.Silent == true)
+            {
+                btn_silentOff.IsEnabled = true;
+                btn_silentOn.IsEnabled = false;
+            }
+            else
+            {
+                btn_silentOn.IsEnabled = true;
+                btn_silentOff.IsEnabled = false;
+            }
 
         }
 
@@ -70,23 +84,44 @@ namespace Jarvis.Settings
         #region Buttons
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.fastStart = true;
+            SettingsJarvis.Default.fastStart = true;
             btn_fastOff.IsEnabled = true;
             btn_fastOn.IsEnabled = false;
-            Properties.Settings.Default.Save();
+            
         }
 
         private void btn_fastOff_Click(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.fastStart = false;
+            SettingsJarvis.Default.fastStart = false;
             btn_fastOff.IsEnabled = false;
             btn_fastOn.IsEnabled = true;
             Properties.Settings.Default.Save();
         }
 
+        private void btn_silentOn_Click(object sender, RoutedEventArgs e)
+        {
+            slider.IsEnabled = false;
+            btn_TestSound.IsEnabled = false;
+            SettingsJarvis.Default.SilentBackup = synth.Volume;
+            SettingsJarvis.Default.Volume = 0;
+            init_Infos();
+            btn_silentOff.IsEnabled = true;
+            btn_silentOn.IsEnabled = false;
+        }
+
+        private void btn_silentOff_Click(object sender, RoutedEventArgs e)
+        {
+            slider.IsEnabled = true;
+            btn_TestSound.IsEnabled = true;
+            SettingsJarvis.Default.Volume = SettingsJarvis.Default.SilentBackup;
+            SettingsJarvis.Default.SilentBackup = 0;
+            init_Infos();
+            btn_silentOff.IsEnabled = false;
+            btn_silentOn.IsEnabled = true;
+        }
 
         #endregion
-        
+
         private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {         
             synth.Volume = (int)slider.Value;
@@ -105,6 +140,7 @@ namespace Jarvis.Settings
             else { enable = false; }
             if (enable)
             {
+                SpeakAsync();
                 speak = true;
             }
             else
@@ -123,6 +159,15 @@ namespace Jarvis.Settings
             }
 
         }
-        
+
+
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+
+            SettingsJarvis.Default.Save();
+        }
+
+
     }
 }

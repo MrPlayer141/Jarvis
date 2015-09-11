@@ -11,6 +11,7 @@ namespace Jarvis.BasicModule
 
         public void CPUandRam()
             {
+            synth.Volume = Jarvis.Settings.SettingsJarvis.Default.Volume;
             int speechSpeed = 1;
             JarvisSpeak("Starte Jarvis CPU und Arbeitspeicher Counter.", VoiceGender.Male, speechSpeed);
 
