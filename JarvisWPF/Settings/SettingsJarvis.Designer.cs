@@ -50,9 +50,9 @@ namespace Jarvis.Settings {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("50")]
-        public int Volume {
+        public byte Volume {
             get {
-                return ((int)(this["Volume"]));
+                return ((byte)(this["Volume"]));
             }
             set {
                 this["Volume"] = value;
@@ -62,9 +62,9 @@ namespace Jarvis.Settings {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int SilentBackup {
+        public byte SilentBackup {
             get {
-                return ((int)(this["SilentBackup"]));
+                return ((byte)(this["SilentBackup"]));
             }
             set {
                 this["SilentBackup"] = value;

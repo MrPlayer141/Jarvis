@@ -33,15 +33,17 @@ namespace Jarvis.Settings
 
         #endregion
 
+        // FTP Login: visualStudio_Project_Jarvis Passwort: // %20 14 \\
+
         private void init_Infos()
         {
             string Version = string.Format("{0} {1}.{2}.{3}.{4} Build {5}",
                (string)SettingsVersion.Default.Main,
-               (int)SettingsVersion.Default.Ver_Main,
-               (int)SettingsVersion.Default.Ver_Unter,
-               (int)SettingsVersion.Default.Ver_Pre,
-               (int)SettingsVersion.Default.Ver_PreBuild,
-               (int)SettingsVersion.Default.Build
+               (byte)SettingsVersion.Default.Ver_Main,
+               (byte)SettingsVersion.Default.Ver_Unter,
+               (byte)SettingsVersion.Default.Ver_Pre,
+               (byte)SettingsVersion.Default.Ver_PreBuild,
+               (byte)SettingsVersion.Default.Build
                );
             synth.Volume = SettingsJarvis.Default.Volume;
             lbl_Culture.Content = synth.Voice.Culture;
@@ -55,7 +57,6 @@ namespace Jarvis.Settings
 
         private void init_Buttons()
         {
-
             if (SettingsJarvis.Default.fastStart == true)
             {
                 btn_fastOff.IsEnabled = true;
@@ -77,7 +78,6 @@ namespace Jarvis.Settings
                 btn_silentOn.IsEnabled = true;
                 btn_silentOff.IsEnabled = false;
             }
-
         }
 
 
@@ -95,14 +95,13 @@ namespace Jarvis.Settings
             SettingsJarvis.Default.fastStart = false;
             btn_fastOff.IsEnabled = false;
             btn_fastOn.IsEnabled = true;
-            Properties.Settings.Default.Save();
         }
 
         private void btn_silentOn_Click(object sender, RoutedEventArgs e)
         {
             slider.IsEnabled = false;
             btn_TestSound.IsEnabled = false;
-            SettingsJarvis.Default.SilentBackup = synth.Volume;
+            SettingsJarvis.Default.SilentBackup = Convert.ToByte(synth.Volume);
             SettingsJarvis.Default.Volume = 0;
             init_Infos();
             btn_silentOff.IsEnabled = true;
@@ -164,7 +163,6 @@ namespace Jarvis.Settings
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-
             SettingsJarvis.Default.Save();
         }
 

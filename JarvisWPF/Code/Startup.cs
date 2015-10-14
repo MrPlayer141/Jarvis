@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Speech.Synthesis;
 using System.Diagnostics;
 using System.Threading;
+using InI;
 
 namespace Jarvis.Code
 {
@@ -14,8 +15,10 @@ namespace Jarvis.Code
     {
         #region Startup
 
-        bool IDE = Settings.SettingsJarvis.Default.fastStart;
+        bool IDE = true; //Settings.SettingsJarvis.Default.fastStart;
         SyS_Counter Count = new SyS_Counter();
+        string directory = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+        
 
         public void startup()
         {
@@ -38,13 +41,23 @@ namespace Jarvis.Code
 
             string sysVersion = string.Format("Willkommen . Ich lade Jarvis {0} Version {1} Punkt {2} Punkt {3} Punkt {4} Build {5}!",
                 (string)Settings.SettingsVersion.Default.Main,
-                (int)Settings.SettingsVersion.Default.Ver_Main,
-                (int)Settings.SettingsVersion.Default.Ver_Unter,
-                (int)Settings.SettingsVersion.Default.Ver_Pre,
-                (int)Settings.SettingsVersion.Default.Ver_PreBuild,
-                (int)Settings.SettingsVersion.Default.Build
+                (byte)Settings.SettingsVersion.Default.Ver_Main,
+                (byte)Settings.SettingsVersion.Default.Ver_Unter,
+                (byte)Settings.SettingsVersion.Default.Ver_Pre,
+                (byte)Settings.SettingsVersion.Default.Ver_PreBuild,
+                (byte)Settings.SettingsVersion.Default.Build
                 );
             JarvisSpeak(sysVersion, VoiceGender.Male, 1);
+        }
+
+        private void Load_Conig()
+        {
+            IniFile newConfig = new IniFile(directory + "/Data/OnlineConfig.ini");
+            IniFile ini = new IniFile(directory + "/Data/Config.ini");
+
+            //ini.IniWriteValue("Javis", "Version", "Hallowelt");
+            //ini.IniWriteValue("Modules", "ModulVersion", "Test");
+            //ini.IniWriteValue("Javis", "Codename", "FirstRun");
         }
 
         private void Uptime()
@@ -55,8 +68,12 @@ namespace Jarvis.Code
 
         private void Updates()
         {
+            JarvisSpeak("Lade die neuesten Konfigurationen", VoiceGender.Neutral, 1);
+
             bool avable = false;
-            //JarvisSpeak("Ich überprüfe ob ein Update für Jarvis verfügbar ist", VoiceGender.Male, 1);
+
+
+            JarvisSpeak("Ich überprüfe ob ein Update für Jarvis verfügbar ist", VoiceGender.Male, 1);
             
 
             if (avable == true)

@@ -37,10 +37,10 @@ namespace Jarvis.Settings {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int Ver_Main {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public byte Ver_Main {
             get {
-                return ((int)(this["Ver_Main"]));
+                return ((byte)(this["Ver_Main"]));
             }
             set {
                 this["Ver_Main"] = value;
@@ -50,9 +50,9 @@ namespace Jarvis.Settings {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int Ver_Unter {
+        public byte Ver_Unter {
             get {
-                return ((int)(this["Ver_Unter"]));
+                return ((byte)(this["Ver_Unter"]));
             }
             set {
                 this["Ver_Unter"] = value;
@@ -62,9 +62,9 @@ namespace Jarvis.Settings {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int Ver_Pre {
+        public byte Ver_Pre {
             get {
-                return ((int)(this["Ver_Pre"]));
+                return ((byte)(this["Ver_Pre"]));
             }
             set {
                 this["Ver_Pre"] = value;
@@ -74,9 +74,9 @@ namespace Jarvis.Settings {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int Ver_PreBuild {
+        public byte Ver_PreBuild {
             get {
-                return ((int)(this["Ver_PreBuild"]));
+                return ((byte)(this["Ver_PreBuild"]));
             }
             set {
                 this["Ver_PreBuild"] = value;
@@ -85,7 +85,7 @@ namespace Jarvis.Settings {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1422")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1423")]
         public int Build {
             get {
                 return ((int)(this["Build"]));

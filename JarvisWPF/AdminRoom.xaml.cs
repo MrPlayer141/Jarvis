@@ -87,9 +87,9 @@ namespace Jarvis
             else if (tBox_pass.Password == Nothing)
             {
                 User = tBox_User.Text;
-                x = y[2] + User;
+                x = y[2] + User + "!";
 
-                lbl_User.Content = "Wilkommen " + User;
+                lbl_User.Content = "Wilkommen " + User + "!";
                 lbl_User.Visibility = Visibility.Visible;
                 btn_Logout.Visibility = Visibility.Visible;
 
@@ -102,7 +102,7 @@ namespace Jarvis
                 tBox_pass.Password = "";
                 tBox_User.Text = "";
 
-                MessageBox.Show(x, "Wilkommen User", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(x, "Wilkommen im Gastzugang", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
@@ -125,6 +125,7 @@ namespace Jarvis
             lbl_Login.Visibility = Visibility.Visible;
             btn_Install_key.Visibility = Visibility.Hidden;
             lbl_User.Visibility = Visibility.Hidden;
+            btn_worker.Visibility = Visibility.Hidden;
             lbl_User.Content = "";
             tBox_pass.Password = "";
             tBox_User.Text = "";
@@ -139,6 +140,11 @@ namespace Jarvis
 
         }
 
+        private void btn_worker_Click(object sender, RoutedEventArgs e)
+        {
+            //Button: Jarvis Worker
+            MessageBox.Show("Jarvis Worker ist noch nicht verfügbar", "!!Funktion nicht verfügbar!!");
+        }
 
 
 
@@ -165,13 +171,15 @@ namespace Jarvis
             btn_Install_key.Visibility = Visibility.Visible;
             btn_Logout.Visibility = Visibility.Visible;
             lbl_User.Visibility = Visibility.Visible;
+            btn_worker.Visibility = Visibility.Visible;
 
             MessageBox.Show(x, "Wilkommen Admin", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+
         #endregion
 
-
+      
     }
 }
 

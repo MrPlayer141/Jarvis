@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using InI;
 using System.Speech.Synthesis;
 using System.Diagnostics;
 using System.Threading;
@@ -25,8 +26,12 @@ namespace JarvisWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Var
+        bool visible = false;
+        #endregion
         public MainWindow()
         {
+            
             Jarvis.Code.Startup st = new Jarvis.Code.Startup();
             InitializeComponent();
             Update_Info();
@@ -140,6 +145,21 @@ namespace JarvisWPF
             Admin.Show();
         }
         #endregion
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            
+            if (visible == false)
+            { Sysinfo.Visibility = Visibility.Visible;
+                visible = true;
+            }
+            else
+            {
+                Sysinfo.Visibility = Visibility.Hidden;
+                visible = false;
+            }
+           
+        }
     }
 
 }

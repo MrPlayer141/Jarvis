@@ -5,20 +5,20 @@
     <Setting Name="Main" Type="System.String" Scope="User">
       <Value Profile="(Default)">Alpha</Value>
     </Setting>
-    <Setting Name="Ver_Main" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
-    </Setting>
-    <Setting Name="Ver_Unter" Type="System.Int32" Scope="User">
+    <Setting Name="Ver_Main" Type="System.Byte" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="Ver_Pre" Type="System.Int32" Scope="User">
+    <Setting Name="Ver_Unter" Type="System.Byte" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="Ver_PreBuild" Type="System.Int32" Scope="User">
+    <Setting Name="Ver_Pre" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Ver_PreBuild" Type="System.Byte" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="Build" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1422</Value>
+      <Value Profile="(Default)">1423</Value>
     </Setting>
   </Settings>
 </SettingsFile>

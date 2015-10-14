@@ -1,0 +1,47 @@
+﻿<Window x:Name="Jarvis_FileManager" x:Class="Jarvis_FileManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Jarvis_FileManager"
+        mc:Ignorable="d"
+        Title="FileManager" Height="350" Width="525">
+
+
+
+    <Grid>
+        <Grid x:Name="FileManager" HorizontalAlignment="Left" Height="323" VerticalAlignment="Top" Width="517" d:IsHidden="True">
+            <TextBox x:Name="tBox_Upload_File" HorizontalAlignment="Left" Height="23" Margin="10,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="417" d:IsHidden="True"/>
+            <Button x:Name="button" Content="Download" HorizontalAlignment="Left" Margin="432,290,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
+            <Button x:Name="button1" Content="Upload" HorizontalAlignment="Left" Margin="352,290,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
+            <DataGrid x:Name="DG1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="257" Width="517" ItemsSource="{Binding}" FrozenColumnCount="2" Loaded="DG_Loaded" d:IsHidden="True">
+                <DataGrid.Columns>
+                    <!--    <DataGridCheckBoxColumn Header="" Binding="{Binding IsMember}" /> -->
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="button6" Content="Browse" HorizontalAlignment="Left" Margin="432,262,0,0" VerticalAlignment="Top" Width="76" Click="button6_Click" d:IsHidden="True"/>
+            <Button x:Name="button7" Content="Back" HorizontalAlignment="Left" Margin="10,290,0,0" VerticalAlignment="Top" Width="74" d:IsHidden="True"/>
+            <Button x:Name="button8" Content="User" HorizontalAlignment="Left" Margin="273,290,0,0" VerticalAlignment="Top" Width="74" d:IsHidden="True"/>
+        </Grid>
+        <Grid x:Name="MainUser" HorizontalAlignment="Left" Height="323" VerticalAlignment="Top" Width="517">
+            <Button x:Name="button2" Content="Schule" Margin="221,63,221,240"/>
+            <Button x:Name="button3" Content="Projekte" HorizontalAlignment="Left" Margin="221,123,0,180" Width="75"/>
+            <Button x:Name="button4" Content="Server" HorizontalAlignment="Left" Margin="221,183,0,120" Width="75"/>
+            <Button x:Name="button5" Content="Andere" HorizontalAlignment="Left" Margin="221,243,0,60" Width="75"/>
+        </Grid>
+        <Grid x:Name="CustomUser" HorizontalAlignment="Left" Height="323" VerticalAlignment="Top" Width="517" d:IsHidden="True">
+            <Button x:Name="button9" Content="Slot 1" Margin="221,20,221,0" VerticalAlignment="Top" d:IsHidden="True"/>
+            <Button x:Name="button10" Content="Slot 2" HorizontalAlignment="Left" Margin="221,60,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
+            <Button x:Name="button11" Content="Slot 3" HorizontalAlignment="Left" Margin="221,100,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
+            <Button x:Name="button12" Content="Slot 4" HorizontalAlignment="Left" Margin="221,140,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
+            <Button x:Name="button13" Content="Slot 5" HorizontalAlignment="Left" Margin="221,180,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
+            <Button x:Name="button14" Content="Edit" HorizontalAlignment="Left" Margin="432,293,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="321,17,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" d:IsHidden="True"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="321,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" d:IsHidden="True"/>
+            <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="321,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" d:IsHidden="True"/>
+            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="321,137,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" d:IsHidden="True"/>
+            <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="321,177,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" d:IsHidden="True"/>
+            <Button x:Name="button15" Content="Save" HorizontalAlignment="Left" Margin="352,293,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -22,7 +22,6 @@ namespace Jarvis_Updater
     {
         public MainWindow()
         {
-            InitializeComponent();
         }
     }
 }

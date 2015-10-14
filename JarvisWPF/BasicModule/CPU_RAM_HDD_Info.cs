@@ -17,9 +17,9 @@ namespace Jarvis.BasicModule
 
             Code.SyS_Counter info = new Code.SyS_Counter();
             float perfCPUCount = info.CPU_Count();
-            int currentCpuPercentage;
-            currentCpuPercentage = (int)perfCPUCount;
-            int currentAvailableMemory = info.RAM_Count();
+            byte currentCpuPercentage;
+            currentCpuPercentage = (byte)perfCPUCount;
+            Int16 currentAvailableMemory = Convert.ToInt16(info.RAM_Count());
 
             Process currentProc = Process.GetCurrentProcess();
             long memoryUsed = currentProc.PrivateMemorySize64 / 1024 / 1024;
