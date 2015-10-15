@@ -27,13 +27,31 @@ namespace Jarvis_FileManager
         //sort code with regions
 
         string directory = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+        bool edit = false;
 
         public MainWindow()
         {
             InitializeComponent();
             LoadDefaultFiles();
+            FileManager.Visibility = Visibility.Hidden;
             MainUser.Visibility = Visibility.Hidden;
-            CustomUser.Visibility = Visibility.Hidden;
+            CustomUser.Visibility = Visibility.Visible;
+            Init();
+        }
+
+        private void Init()
+        {
+            tBox_Slot1.Text = Convert.ToString(btn_Slot1.Content);
+            tBox_Slot2.Text = Convert.ToString(btn_Slot2.Content);
+            tBox_Slot3.Text = Convert.ToString(btn_Slot3.Content);
+            tBox_Slot4.Text = Convert.ToString(btn_Slot4.Content);
+            tBox_Slot5.Text = Convert.ToString(btn_Slot5.Content);
+            tBox_Slot1.Visibility = Visibility.Hidden;
+            tBox_Slot2.Visibility = Visibility.Hidden;
+            tBox_Slot3.Visibility = Visibility.Hidden;
+            tBox_Slot4.Visibility = Visibility.Hidden;
+            tBox_Slot5.Visibility = Visibility.Hidden;
+
         }
 
         private void LoadDefaultFiles()
@@ -64,7 +82,42 @@ namespace Jarvis_FileManager
                 tBox_Upload_File.Text = filename;
             }
         }
+
+        private void btn_edit_Click(object sender, RoutedEventArgs e)
+        {
+            if (edit == true)
+            {
+                if (tBox_Slot1.Text == Convert.ToString(btn_Slot1.Content) &&
+                tBox_Slot2.Text == Convert.ToString(btn_Slot2.Content) &&
+                tBox_Slot3.Text == Convert.ToString(btn_Slot3.Content) &&
+                tBox_Slot4.Text == Convert.ToString(btn_Slot4.Content) &&
+                tBox_Slot5.Text == Convert.ToString(btn_Slot5.Content)
+                    )
+                {
+                    tBox_Slot1.Visibility = Visibility.Hidden;
+                    tBox_Slot2.Visibility = Visibility.Hidden;
+                    tBox_Slot3.Visibility = Visibility.Hidden;
+                    tBox_Slot4.Visibility = Visibility.Hidden;
+                    tBox_Slot5.Visibility = Visibility.Hidden;
+
+
+                }
+                else { MessageBox.Show("Speichern!!!!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error); }
+            }
+            else
+            {
+                edit = true;
+                tBox_Slot1.Visibility = Visibility.Visible;
+                tBox_Slot2.Visibility = Visibility.Visible;
+                tBox_Slot3.Visibility = Visibility.Visible;
+                tBox_Slot4.Visibility = Visibility.Visible;
+                tBox_Slot5.Visibility = Visibility.Visible;
+
+            }
+
+        }
     }
+
 
 
 

@@ -5,43 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Jarvis_FileManager"
         mc:Ignorable="d"
-        Title="FileManager" Height="350" Width="525">
+        Title="FileManager" Height="350" Width="525" Background="White">
 
 
 
     <Grid>
         <Grid x:Name="FileManager" HorizontalAlignment="Left" Height="323" VerticalAlignment="Top" Width="517" d:IsHidden="True">
-            <TextBox x:Name="tBox_Upload_File" HorizontalAlignment="Left" Height="23" Margin="10,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="417" d:IsHidden="True"/>
-            <Button x:Name="button" Content="Download" HorizontalAlignment="Left" Margin="432,290,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
-            <Button x:Name="button1" Content="Upload" HorizontalAlignment="Left" Margin="352,290,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
-            <DataGrid x:Name="DG1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="257" Width="517" ItemsSource="{Binding}" FrozenColumnCount="2" Loaded="DG_Loaded" d:IsHidden="True">
+            <DataGrid x:Name="DG1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="257" Width="517" ItemsSource="{Binding}" FrozenColumnCount="2" Loaded="DG_Loaded" Background="White">
                 <DataGrid.Columns>
                     <!--    <DataGridCheckBoxColumn Header="" Binding="{Binding IsMember}" /> -->
                 </DataGrid.Columns>
             </DataGrid>
-            <Button x:Name="button6" Content="Browse" HorizontalAlignment="Left" Margin="432,262,0,0" VerticalAlignment="Top" Width="76" Click="button6_Click" d:IsHidden="True"/>
-            <Button x:Name="button7" Content="Back" HorizontalAlignment="Left" Margin="10,290,0,0" VerticalAlignment="Top" Width="74" d:IsHidden="True"/>
-            <Button x:Name="button8" Content="User" HorizontalAlignment="Left" Margin="273,290,0,0" VerticalAlignment="Top" Width="74" d:IsHidden="True"/>
+            <Grid Height="66" VerticalAlignment="Bottom" Background="Red">
+                <TextBox x:Name="tBox_Upload_File" HorizontalAlignment="Left" Margin="9.5,7.694,0,35.306" TextWrapping="Wrap" Text="TextBox" Width="417"/>
+                <Button x:Name="button" Content="Download" HorizontalAlignment="Left" Margin="431.5,35.694,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="button1" Content="Upload" HorizontalAlignment="Left" Margin="351.5,35.694,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="button6" Content="Browse" HorizontalAlignment="Left" Margin="431.5,7.694,0,0" VerticalAlignment="Top" Width="76" Click="button6_Click" d:LayoutOverrides="VerticalAlignment"/>
+                <Button x:Name="button7" Content="Back" HorizontalAlignment="Left" Margin="9.5,35.694,0,0" VerticalAlignment="Top" Width="74"/>
+                <Button x:Name="button8" Content="User" HorizontalAlignment="Left" Margin="272.5,35.694,0,0" VerticalAlignment="Top" Width="74"/>
+            </Grid>
         </Grid>
-        <Grid x:Name="MainUser" HorizontalAlignment="Left" Height="323" VerticalAlignment="Top" Width="517">
+        <Grid x:Name="MainUser" HorizontalAlignment="Left" Height="323" VerticalAlignment="Top" Width="517" d:IsHidden="True">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FFDC" Offset="0"/>
+                    <GradientStop Color="#FF00FF46" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <Button x:Name="button2" Content="Schule" Margin="221,63,221,240"/>
             <Button x:Name="button3" Content="Projekte" HorizontalAlignment="Left" Margin="221,123,0,180" Width="75"/>
             <Button x:Name="button4" Content="Server" HorizontalAlignment="Left" Margin="221,183,0,120" Width="75"/>
             <Button x:Name="button5" Content="Andere" HorizontalAlignment="Left" Margin="221,243,0,60" Width="75"/>
         </Grid>
-        <Grid x:Name="CustomUser" HorizontalAlignment="Left" Height="323" VerticalAlignment="Top" Width="517" d:IsHidden="True">
-            <Button x:Name="button9" Content="Slot 1" Margin="221,20,221,0" VerticalAlignment="Top" d:IsHidden="True"/>
-            <Button x:Name="button10" Content="Slot 2" HorizontalAlignment="Left" Margin="221,60,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
-            <Button x:Name="button11" Content="Slot 3" HorizontalAlignment="Left" Margin="221,100,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
-            <Button x:Name="button12" Content="Slot 4" HorizontalAlignment="Left" Margin="221,140,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
-            <Button x:Name="button13" Content="Slot 5" HorizontalAlignment="Left" Margin="221,180,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
-            <Button x:Name="button14" Content="Edit" HorizontalAlignment="Left" Margin="432,293,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="321,17,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" d:IsHidden="True"/>
-            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="321,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" d:IsHidden="True"/>
-            <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="321,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" d:IsHidden="True"/>
-            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="321,137,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" d:IsHidden="True"/>
-            <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="321,177,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" d:IsHidden="True"/>
-            <Button x:Name="button15" Content="Save" HorizontalAlignment="Left" Margin="352,293,0,0" VerticalAlignment="Top" Width="75" d:IsHidden="True"/>
+        <Grid x:Name="CustomUser" HorizontalAlignment="Left" Height="323" VerticalAlignment="Top" Width="517">
+            <Button x:Name="btn_Slot1" Content="Slot 1" Margin="200,28,242,0" VerticalAlignment="Top"/>
+            <Button x:Name="btn_Slot2" Content="Slot 2" HorizontalAlignment="Left" Margin="200,68,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_Slot3" Content="Slot 3" HorizontalAlignment="Left" Margin="200,108,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_Slot4" Content="Slot 4" HorizontalAlignment="Left" Margin="200,148,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_Slot5" Content="Slot 5" HorizontalAlignment="Left" Margin="200,188,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_edit" Content="Edit" HorizontalAlignment="Left" Margin="432,293,0,0" VerticalAlignment="Top" Width="75" Click="btn_edit_Click"/>
+            <TextBox x:Name="tBox_Slot1" HorizontalAlignment="Left" Height="23" Margin="300,25,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="tBox_Slot2" HorizontalAlignment="Left" Height="23" Margin="300,65,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="tBox_Slot3" HorizontalAlignment="Left" Height="23" Margin="300,105,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="tBox_Slot4" HorizontalAlignment="Left" Height="23" Margin="300,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="tBox_Slot5" HorizontalAlignment="Left" Height="23" Margin="300,185,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="352,293,0,0" VerticalAlignment="Top" Width="75"/>
         </Grid>
     </Grid>
 </Window>
